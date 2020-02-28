@@ -29,9 +29,10 @@ class CoursesPage extends React.Component {
         <input
           type="text"
           onChange={this.handleChange}
-          value={this.state.title}
+          value={this.state.course.title}
         />
-        <input type="submit" value="save" />
+
+        <input type="submit" value="Save" />
         {this.props.courses.map(course => (
           <div key={course.title}>{course.title}</div>
         ))}
@@ -40,9 +41,9 @@ class CoursesPage extends React.Component {
   }
 }
 
-CoursesPage.PropTypes = {
-  actions: PropTypes.object.isRequired,
-  courses: PropTypes.array.isRequired
+CoursesPage.propTypes = {
+  courses: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
